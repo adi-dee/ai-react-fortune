@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const Card =  ({ front, backText }) => {
     return (
     <div class="container"> 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from './Card';
 
 const FortuneType = ({ setFortuneType }) => {
-  const [selectedType, setSelectedType] = useState(null);
+  const [ setSelectedType] = useState(null);
   const handleSelection = (type) => {
     setSelectedType(type);
     setFortuneType(type);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from './Card';
 
 const FortuneStyle = ({ onStyleSelection }) => {
-  const [selectedStyle, setSelectedStyle] = useState(null);
+  const [setSelectedStyle] = useState(null);
 
   const handleStyleSelection = (style) => {
     setSelectedStyle(style);
