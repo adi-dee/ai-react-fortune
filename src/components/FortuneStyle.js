@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from './Card';
 
 const FortuneStyle = ({ onStyleSelection }) => {
-  const [setSelectedStyle] = useState(null);
-
   const handleStyleSelection = (style) => {
-    setSelectedStyle(style);
     if (typeof onStyleSelection === "function") {
       onStyleSelection(style);
     }

@@ -298,6 +298,7 @@ a {
   position: absolute;
   margin: 0au;
   margin-left: -58px;
+  z-index: 100;
 }
 
 .fortune-h2 {

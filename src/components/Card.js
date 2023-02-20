@@ -1,6 +1,6 @@
 const Card =  ({ front, backText }) => {
     return (
-    <div class="container"> 
+    <div className="container"> 
         <div className="card">  
 
         <div className="card_front">

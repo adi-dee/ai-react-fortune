@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import Card from './Card';
 
 const AuraColor = ({ setAuraColor }) => {
-  const [setSelectedColor] = useState(null);
-
   const handleColorSelection = (color) => {
-    setSelectedColor(color);
     setAuraColor(color);
   };
 
