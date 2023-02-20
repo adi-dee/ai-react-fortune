@@ -1,38 +1,305 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&family=Lovers+Quarrel&display=swap');
+
+.app-body {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10%;
+  max-width: 80%;
+  font-family: 'Cardo', serif;
+
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 70px;
+  margin: 0;
+	background-image: -webkit-linear-gradient(92deg, #e2a08c, #e8c491);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: gradient 10s infinite linear;
+}
+
+@keyframes gradient  {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+
+
+.container,
+.card,
+.card_front,
+.card_back {
+  width: 157px;
+  height: 300px;
+  margin: 2em auto;  
+  cursor: pointer;
+  font-family: 'Lovers Quarrel', cursive;
+}
+
+
+
+.card_front {  
+/*   height: 100%; */
+  background: url('tarot.jpg') no-repeat;
+  background-size: contain;
+}
+
+
+
+@supports(display:flex){
+ .card_front {  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  
+  .card_front .card-symbol {  
+    margin: 0 0.15em;
+    border-radius: 50%;
+    font-size: 15em; 
+    margin-left:-10px 
+  }
+}
+
+.card_front {
+  position: relative;
+  padding: 0 1em;
+}
+
+.card_front .card-symbol {    
+  font-size: 15em;  
+}
+
+
+
+.card_back {
+/*   display: none; */
+  padding: 1em;
+  background-color: white;
+  height: 270px;
+  width: 127px;
+  border-radius: 10px;
+}
+
+
+.card_front > *,
+.card_back > * {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.75);  
+}
+
+.card-text {
+  text-align: center;
+  margin-top: 20%;
+  font-size: 65px;
+
+}
+
+/* FLIP CARD STYLING */
+.container {
+  perspective: 1000px;
+
+}
+
+.container:hover .card, 
+.container.hover {
+  transform: rotateY(-180deg);
+
+}
+
+.card {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card_front,
+.card_back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card_front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.card-front p {
+  transform: scale(-1, 1);
+}
+
+.card_back {
+  transform: rotateY(-180deg);
+  z-index:5;
+}
+
+.cards span {
+  width: 100px;
+  display: inline-block;
+}
+
+
+.cards span:nth-child(odd) {
+  animation: shadowFloat 1.2s linear alternate infinite;
+}
+
+.cards span:nth-child(even) {
+  animation: shadowFloat2 1.2s linear alternate infinite;
+}
+
+
+@keyframes shadowFloat {
+  0%   {
+   transform: translateY(-3px);
+ }
+  100% {
+   transform: translateY(3px); 
+ }
+}
+
+
+@keyframes shadowFloat2 {
+  0%   {
+    transform: translateY(3px); 
+  }
+  100% {
+    transform: translateY(-3px);
+ }
+}
+
+.result {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.cards span {
+  margin: 0 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.result-container {
+  position:absolute;
+  bottom: 20px;
+  left: 42%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.result-container:nth-child(2) {
+  margin-left:80px
+}
+
+.result-container:nth-child(3) {
+  margin-left:160px
+}
+
+
+.result-card {
+  border-radius: 10%;
+  background-color: white;
+  width: 60px;
+  height: 100px;
+  text-align: center;
+}
+
+.result-card-text {
+  padding-top: 30px;
+  font-size: 27px;
+  font-family: 'Lovers Quarrel', cursive;
+
+}
+
+.fortune {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: rgba(255,255,255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.fortune-btn {
+  padding: 60px 20px;
+  border-radius: 100%;
+  width: fit-content;
+  margin: 0 auto;
+  background: #000000;
+  box-shadow: 0 0 10px #d5fff6;
+  font-family: 'Lovers Quarrel', cursive;
+  font-size: 30px;
   color: white;
+  cursor: pointer;
+  box-shadow: 0 0 60px 10px #d5fff6, /* inner white */ 0 0 10px 10px #d5fff6, /* middle magenta */ 0 0 119px 60px #d5fff6;
+
 }
 
-.App-link {
-  color: #61dafb;
+.fortune-btn:hover {
+  box-shadow: 0 0 60px 30px #fff, /* inner white */ 0 0 100px 60px #fff, /* middle magenta */ 0 0 140px 90px #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+.effect-1 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  color: white;
+  background-color: black;
+  -webkit-transform: translateZ(0);
+}
+
+.effect-1:hover {
+  background-color: rgba(0,0,0,0.8);
+  transition: background-color 0.2s;
+}
+
+.effect-1:hover:after {
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+
+.effect-1:after {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  content: '';
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(0,0,0,0.8);
+  transform: scale(0.7);
+  transition: transform 0.2s;
+}
+
+.effect-1 span {
+  margin-top: 60px;
+  position: absolute;
+  margin: 0au;
+  margin-left: -58px;
+}
+
+.fortune-h2 {
+  margin-bottom: 40px;
 }
