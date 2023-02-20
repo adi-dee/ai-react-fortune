@@ -9,9 +9,8 @@ const FortuneStyle = ({ onStyleSelection }) => {
   };
 
   return (
-    <div>
-      <h2>Select Fortune Style</h2>
       <div className="cards">
+      <h2>Select Fortune Style</h2>
         <span onClick={() => handleStyleSelection("riddle")}>
           <Card front={""} backText={"Riddle"}/>
         </span>
@@ -25,7 +24,6 @@ const FortuneStyle = ({ onStyleSelection }) => {
           <Card front={""} backText={"Inspiring"}/>
         </span>
       </div>
-    </div>
   );
 };
 

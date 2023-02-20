@@ -8,7 +8,6 @@ const AuraColor = ({ setAuraColor }) => {
   return (
         <div className="cards color-cards">
         <h2>Select Your Aura Color</h2>
-        <div>   
           <span style={{ color: "red" }} onClick={() => handleColorSelection("red")}>
           <Card front={""} backText={"Red"}/>
           </span>
@@ -25,7 +24,6 @@ const AuraColor = ({ setAuraColor }) => {
             <Card front={""} backText={"Orange"}/>
           </span>
   
-          </div>
       </div>
   );
 };
